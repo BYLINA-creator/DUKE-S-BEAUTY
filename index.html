@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Duke's Beauty Studio | By Lina Duque — Atlanta, GA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- PANTALLA DE ENTRADA (TELÓN DE LUJO) -->
+  <div id="introLoader" class="intro-loader">
+    <div class="curtain curtain-left"></div>
+    <div class="curtain curtain-right"></div>
+    <div class="intro-content">
+      <div class="intro-monogram">LD</div>
+      <img src="logo.png" alt="Duke's Beauty Studio" class="intro-logo" onerror="this.style.display='none'" />
+      <h1 class="intro-title">DUKE'S</h1>
+      <p class="intro-subtitle">BEAUTY STUDIO • ATLANTA, GA</p>
+      <div class="intro-progress-bar">
+        <div class="intro-progress-fill"></div>
+      </div>
+      <p class="intro-tagline">By Lina Duque — Salud Capilar y Alta Estética</p>
+    </div>
+  </div>
+
+  <!-- PARTÍCULAS DORADAS FLOTANTES -->
+  <canvas id="goldParticles"></canvas>
+
+  <!-- BARRA SUPERIOR CON UBICACIÓN, INSTAGRAM Y TRADUCTOR -->
+  <div class="topbar">
+    <div class="container topbar-flex">
+      <div class="topbar-info">
+        <span>ATLANTA, GA (USA)</span>
+        <span class="sep">|</span>
+        <a href="https://wa.me/14707960870" target="_blank" rel="noopener noreferrer">+1 (470) 796-0870</a>
+        <span class="sep">|</span>
+        <a href="https://www.instagram.com/dukesbeautystudio" target="_blank" rel="noopener noreferrer">@dukesbeautystudio ↗</a>
+      </div>
+
+      <!-- Selector de Traducción a cualquier idioma -->
+      <div class="translate-wrapper">
+        <span class="translate-label">Idioma / Language:</span>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand" onclick="cambiarApartado('inicio')">
+        <img src="logo.png" alt="Duke's Beauty Studio Logo" class="brand-logo" onerror="this.style.display='none'" />
+        <div class="brand-text">
+          <span class="brand-title">DUKE'S</span>
+          <span class="brand-subtitle">BEAUTY STUDIO <small>Atlanta, GA • By Lina Duque</small></span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">MENÚ</button>
+
+      <nav class="nav-links" id="navLinks">
+        <button class="nav-tab active" data-target="inicio">Inicio</button>
+        <button class="nav-tab" data-target="tricologia">Tricología</button>
+        <button class="nav-tab" data-target="catalogo">Catálogo y Precios</button>
+        <button class="nav-tab" data-target="pilares">Cabello y Piel</button>
+        <button class="nav-tab" data-target="galeria">Galería (10)</button>
+        <button class="nav-tab btn-nav-cta" data-target="contacto">Ubicación y Turnos</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CINTA ANIMADA INFINITA (MARQUEE) -->
+  <div class="luxury-marquee">
+    <div class="marquee-track">
+      <span>DIAGNÓSTICO CON CAPILÓGRAFO SIN COSTO ADICIONAL</span>
+      <span>•</span>
+      <span>TRICOLOGÍA CAPILAR EN ATLANTA, GA</span>
+      <span>•</span>
+      <span>BALAYAGE Y ALTA COLORACIÓN</span>
+      <span>•</span>
+      <span>NANOPLASTIA Y CONTROL FRIZZ</span>
+      <span>•</span>
+      <span>CUIDADO AVANZADO DE LA PIEL</span>
+      <span>•</span>
+      <span>ATENCIÓN PERSONALIZADA POR TURNO INDIVIDUAL</span>
+      <span>•</span>
+      <span>DIAGNÓSTICO CON CAPILÓGRAFO SIN COSTO ADICIONAL</span>
+      <span>•</span>
+      <span>TRICOLOGÍA CAPILAR EN ATLANTA, GA</span>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR DE APARTADOS INDEPENDIENTES -->
+  <main class="views-container">
+
+    <!-- ==========================================
+         APARTADO 1: INICIO
+    =========================================== -->
+    <section id="view-inicio" class="view-section active">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="shimmer-badge">ATLANTA, GEORGIA • CUIDADO PROFESIONAL Y TRICOLOGÍA</span>
+          <h1 class="reveal-item">Expertos en el cuidado integral de tu <em>cabello y tu piel</em></h1>
+          <p class="hero-lead reveal-item delay-1">
+            Porque tu belleza merece un cuidado profesional, personalizado y con resultados reales. 
+            En <strong>Duke's Beauty Studio by Lina Duque</strong> trabajamos por cita exclusiva para dedicarte el tiempo y la excelencia que mereces.
+          </p>
+
+          <div class="hero-buttons reveal-item delay-2">
+            <button class="btn btn-gold-shimmer" onclick="cambiarApartado('catalogo')">
+              Explorar Catálogo y Precios
+            </button>
+            <button class="btn btn-outline-gold" onclick="cambiarApartado('contacto')">
+              Consultar Turno Disponible
+            </button>
+            <a href="https://www.instagram.com/dukesbeautystudio" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
+              Instagram @dukesbeautystudio ↗
+            </a>
+          </div>
+
+          <div class="quick-nav-cards reveal-item delay-3">
+            <div class="quick-card glow-card" onclick="cambiarApartado('tricologia')">
+              <span class="q-num">I</span>
+              <div>
+                <strong>Tricología Capilar</strong>
+                <small>Diagnóstico sin costo adicional</small>
+              </div>
+            </div>
+            <div class="quick-card glow-card" onclick="cambiarApartado('galeria')">
+              <span class="q-num">II</span>
+              <div>
+                <strong>Galería de Resultados</strong>
+                <small>Ver portafolio de fotos</small>
+              </div>
+            </div>
+            <div class="quick-card glow-card" onclick="cambiarApartado('contacto')">
+              <span class="q-num">III</span>
+              <div>
+                <strong>Atlanta, GA (USA)</strong>
+                <small>Ver mapa y consultar cita</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-card-3d float-slow">
+            <img src="lina.jpg" alt="Lina Duque - Especialista Capilar en Atlanta" class="hero-img" onerror="this.src='logo.png'" />
+            <div class="hero-floating-quote">
+              "Cabello sano también es belleza"
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APARTADO 2: TRICOLOGÍA
+    =========================================== -->
+    <section id="view-tricologia" class="view-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">CIENCIA Y SALUD CAPILAR EN ATLANTA</span>
+          <h2>Tricología: Diagnóstico, Tratamiento y Prevención</h2>
+          <p>Examinamos con microcámara de alta magnificación (capilógrafo) la salud de tu cuero cabelludo y la fibra del cabello antes de cada procedimiento.</p>
+        </div>
+
+        <div class="trico-grid">
+          <div class="trico-card glow-card">
+            <div class="trico-number">FASE I</div>
+            <h3>Análisis con Capilógrafo</h3>
+            <p>Evaluación profunda del folículo piloso y la hebra capilar con microcámara de alta precisión <strong>sin costo adicional</strong>.</p>
+          </div>
+
+          <div class="trico-card glow-card">
+            <div class="trico-number">FASE II</div>
+            <h3>Control Caída y Crecimiento</h3>
+            <p>Protocolos especializados para frenar la caída del cabello, oxigenar el cuero cabelludo y estimular un crecimiento fuerte.</p>
+          </div>
+
+          <div class="trico-card glow-card">
+            <div class="trico-number">FASE III</div>
+            <h3>Restauración de la Hebra</h3>
+            <p>Devolvemos la vitalidad, resistencia, suavidad y brillo natural mediante nutrición e hidratación intensiva.</p>
+          </div>
+        </div>
+
+        <div class="trico-banner">
+          <div>
+            <h3>Diagnóstico Capilar Profesional Incluido</h3>
+            <p>Escríbenos para consultar qué turnos tenemos disponibles esta semana en Atlanta, GA.</p>
+          </div>
+          <div class="banner-actions">
+            <button class="btn btn-gold-shimmer" onclick="seleccionarServicio('Diagnóstico Capilar Avanzado (Sin costo adicional)')">
+              Preguntar por Turno de Diagnóstico
+            </button>
+            <button class="btn btn-outline-light" onclick="cambiarApartado('catalogo')">
+              Ver Catálogo Completo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APARTADO 3: CATÁLOGO DE 14 SERVICIOS
+    =========================================== -->
+    <section id="view-catalogo" class="view-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">CATÁLOGO OFICIAL DUKE'S BEAUTY STUDIO</span>
+          <h2>Servicios Profesionales y Precios</h2>
+          <p>Toca cualquier categoría para filtrar o selecciona el servicio que deseas para consultar disponibilidad de turno.</p>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="filter-buttons" id="filterButtons">
+            <button class="filter-btn active" data-filter="todos">Todos (14)</button>
+            <button class="filter-btn" data-filter="tricologia">Tricología y Tratamientos</button>
+            <button class="filter-btn" data-filter="corte-color">Corte, Peinados y Color</button>
+            <button class="filter-btn" data-filter="rostro">Cejas, Pestañas y Maquillaje</button>
+            <button class="filter-btn" data-filter="piel-productos">Cuidado de Piel y Productos</button>
+          </div>
+
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar servicio (ej. Balayage, Nanoplastia, Cejas, Facial...)" />
+          </div>
+        </div>
+
+        <div class="services-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APARTADO 4: CUIDADO DE PIEL Y CABELLO
+    =========================================== -->
+    <section id="view-pilares" class="view-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">BELLEZA INTEGRAL • CABELLO • PIEL • BIENESTAR</span>
+          <h2>Nuestras Especialidades</h2>
+          <p>Selecciona un área para conocer nuestros protocolos de trabajo.</p>
+        </div>
+
+        <div class="subtabs-container">
+          <button class="subtab-btn active" onclick="mostrarSubPilar('cabello', this)">Cuidado Profesional del Cabello</button>
+          <button class="subtab-btn" onclick="mostrarSubPilar('piel', this)">Cuidado de la Piel</button>
+          <button class="subtab-btn" onclick="mostrarSubPilar('valores', this)">Sello de Confianza</button>
+        </div>
+
+        <div id="subpilar-cabello" class="subpilar-content active">
+          <div class="pilar-showcase">
+            <div class="pilar-info">
+              <span class="pilar-tag">ÁREA CAPILAR</span>
+              <h3>Salud, Coloración y Diseño Capilar</h3>
+              <ul class="check-list">
+                <li><strong>Corte y Asesoría de Imagen:</strong> Estilo personalizado según tus facciones.</li>
+                <li><strong>Coloración de Alta Gama:</strong> Balayage francés, Highlights, baño de brillo y cubrimiento de canas.</li>
+                <li><strong>Control Frizz:</strong> Nanoplastia y Botox capilar para un cabello sedoso y brillante.</li>
+                <li><strong>Terapias Capilares:</strong> Hidratación profunda, desintoxicación y Detox del cuero cabelludo.</li>
+                <li><strong>Extensiones y Peinados:</strong> Colocación, mantenimiento, trenzas, recogidos y blower.</li>
+              </ul>
+              <button class="btn btn-gold-shimmer" onclick="cambiarApartado('catalogo')">Ver Precios de Cabello</button>
+            </div>
+            <div class="pilar-visual">
+              <div class="quote-box">
+                <h4>"Cabello sano también es belleza"</h4>
+                <p>Cuidamos la salud de tu hebra capilar con productos de alta calidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="subpilar-piel" class="subpilar-content">
+          <div class="pilar-showcase">
+            <div class="pilar-info">
+              <span class="pilar-tag">ÁREA FACIAL</span>
+              <h3>Estética Facial, Cejas y Pestañas</h3>
+              <ul class="check-list">
+                <li><strong>Limpieza Facial Profunda:</strong> Higiene, hidratación y oxigenación de la piel.</li>
+                <li><strong>Tratamientos Especializados:</strong> Protocolos para rejuvenecimiento, flacidez, manchas y acné.</li>
+                <li><strong>Luminosidad Facial:</strong> Rutinas adaptadas a las necesidades de tu rostro.</li>
+                <li><strong>Mirada Perfecta:</strong> Lifting de pestañas, Laminado de cejas (Brow Lamination) y Henna.</li>
+                <li><strong>Cuidado en Casa:</strong> Venta de productos para el cuidado del cabello y la piel.</li>
+              </ul>
+              <button class="btn btn-gold-shimmer" onclick="seleccionarServicio('Tratamientos Faciales y Cuidado de la Piel ($90 en adelante)')">Consultar Turno Facial</button>
+            </div>
+            <div class="pilar-visual">
+              <div class="quote-box">
+                <h4>"Porque la belleza también es salud"</h4>
+                <p>Atención profesional y personalizada en Atlanta, GA.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="subpilar-valores" class="subpilar-content">
+          <div class="valores-grid-cards">
+            <div class="valor-card glow-card">
+              <span class="roman-badge">I</span>
+              <h4>Productos de Alta Calidad</h4>
+              <p>Líneas profesionales seleccionadas para proteger tu cabello y tu piel.</p>
+            </div>
+            <div class="valor-card glow-card">
+              <span class="roman-badge">II</span>
+              <h4>Turno Individual</h4>
+              <p>Atención exclusiva sin cruces de clientes en tu mismo horario.</p>
+            </div>
+            <div class="valor-card glow-card">
+              <span class="roman-badge">III</span>
+              <h4>Diagnóstico con Capilógrafo</h4>
+              <p>Evaluación técnica profunda incluida sin costo adicional.</p>
+            </div>
+            <div class="valor-card glow-card">
+              <span class="roman-badge">IV</span>
+              <h4>Resultados Visibles</h4>
+              <p>Cambios reales desde la primera sesión con asesoría personalizada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APARTADO 5: GALERÍA PARA 10 FOTOS
+    =========================================== -->
+    <section id="view-galeria" class="view-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">PORTAFOLIO VISUAL • ATLANTA, GA</span>
+          <h2>Galería de Resultados Reales</h2>
+          <p>Toca cualquier imagen para verla en pantalla completa.</p>
+        </div>
+
+        <!-- Espacio preparado para las 10 fotos (foto1.jpg a foto10.jpg) -->
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto1.jpg', 'Duke\'s Beauty Studio — Foto 01')">
+            <div class="img-zoom-wrap">
+              <img src="foto1.jpg" alt="Galería 1" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 01</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto2.jpg', 'Duke\'s Beauty Studio — Foto 02')">
+            <div class="img-zoom-wrap">
+              <img src="foto2.jpg" alt="Galería 2" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 02</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto3.jpg', 'Duke\'s Beauty Studio — Foto 03')">
+            <div class="img-zoom-wrap">
+              <img src="foto3.jpg" alt="Galería 3" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 03</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto4.jpg', 'Duke\'s Beauty Studio — Foto 04')">
+            <div class="img-zoom-wrap">
+              <img src="foto4.jpg" alt="Galería 4" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 04</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto5.jpg', 'Duke\'s Beauty Studio — Foto 05')">
+            <div class="img-zoom-wrap">
+              <img src="foto5.jpg" alt="Galería 5" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 05</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto6.jpg', 'Duke\'s Beauty Studio — Foto 06')">
+            <div class="img-zoom-wrap">
+              <img src="foto6.jpg" alt="Galería 6" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 06</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto7.jpg', 'Duke\'s Beauty Studio — Foto 07')">
+            <div class="img-zoom-wrap">
+              <img src="foto7.jpg" alt="Galería 7" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 07</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto8.jpg', 'Duke\'s Beauty Studio — Foto 08')">
+            <div class="img-zoom-wrap">
+              <img src="foto8.jpg" alt="Galería 8" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 08</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto9.jpg', 'Duke\'s Beauty Studio — Foto 09')">
+            <div class="img-zoom-wrap">
+              <img src="foto9.jpg" alt="Galería 9" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 09</div>
+          </div>
+
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto10.jpg', 'Duke\'s Beauty Studio — Foto 10')">
+            <div class="img-zoom-wrap">
+              <img src="foto10.jpg" alt="Galería 10" onerror="this.closest('.gallery-item').style.display='none'" />
+            </div>
+            <div class="gallery-caption">Resultado Real 10</div>
+          </div>
+        </div>
+
+        <div class="ig-cta-box">
+          <div>
+            <h3>Descubre más en nuestro Instagram: @dukesbeautystudio</h3>
+            <p>Síguenos para ver más transformaciones, videos de tricología y consejos de cuidado en Atlanta, GA.</p>
+          </div>
+          <a href="https://www.instagram.com/dukesbeautystudio" target="_blank" rel="noopener noreferrer" class="btn btn-gold-shimmer">
+            Ver Instagram Oficial ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APARTADO 6: UBICACIÓN EN ATLANTA Y CONSULTA DE TURNO
+    =========================================== -->
+    <section id="view-contacto" class="view-section">
+      <div class="container contacto-grid">
+        <div class="contacto-info">
+          <span class="section-subtitle">ATLANTA, GEORGIA (USA)</span>
+          <h2>Ubicación y Consulta de Turnos</h2>
+          <p>
+            Trabajamos únicamente bajo reserva previa e individual (un solo cliente por turno). 
+            Completa tus datos para escribirnos directamente a WhatsApp y <strong>preguntar qué turnos tenemos disponibles</strong> para ti.
+          </p>
+
+          <div class="valores-list">
+            <div class="valor-item">
+              <strong>WhatsApp Directo:</strong> <a href="https://wa.me/14707960870" target="_blank" rel="noopener noreferrer" class="text-link">+1 (470) 796-0870</a>
+            </div>
+            <div class="valor-item">
+              <strong>Ubicación:</strong> Atlanta, Georgia (USA)
+            </div>
+            <div class="valor-item">
+              <strong>Instagram:</strong> <a href="https://www.instagram.com/dukesbeautystudio" target="_blank" rel="noopener noreferrer" class="text-link">@dukesbeautystudio</a>
+            </div>
+          </div>
+
+          <!-- MAPA DE GOOGLE MAPS: ATLANTA, GA -->
+          <div class="map-card">
+            <iframe
+              title="Ubicación en Atlanta GA"
+              src="https://www.google.com/maps?q=Atlanta,GA,USA&output=embed"
+              width="100%"
+              height="250"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-footer">
+              <span>Duke's Beauty Studio — Atlanta, GA</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=Atlanta+GA+USA" target="_blank" rel="noopener noreferrer">
+                Abrir en Google Maps ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contacto-form-card">
+          <h3>Preguntar por Turno Disponible</h3>
+          <p class="form-sub">Envíanos tu consulta directa por WhatsApp al +1 (470) 796-0870:</p>
+
+          <form id="bookingForm">
+            <div class="form-group">
+              <label for="clientName">Tu Nombre y Apellido</label>
+              <input type="text" id="clientName" required placeholder="Ingresa tu nombre completo" />
+            </div>
+
+            <div class="form-group">
+              <label for="serviceSelect">Servicio que te interesa</label>
+              <select id="serviceSelect" required></select>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredDay">¿Qué día o jornada te gustaría consultar?</label>
+              <input type="text" id="preferredDay" required placeholder="Ej. Este viernes en la mañana / Sábado en la tarde" />
+            </div>
+
+            <div class="form-group">
+              <label for="clientNotes">Detalles adicionales (largo de tu cabello o dudas)</label>
+              <textarea id="clientNotes" rows="3" placeholder="Ej. Mi cabello es largo, quisiera saber qué turno tienes disponible..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold-shimmer btn-full">
+              Preguntar qué Turno hay Disponible por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VISOR MODAL PARA AMPLIAR LAS 10 FOTOS DE LA GALERÍA -->
+  <div id="imageModal" class="modal-overlay" onclick="cerrarImagenModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <img id="modalImg" src="" alt="Vista ampliada" />
+      <p id="modalCaption"></p>
+      <button class="btn btn-outline-gold" onclick="cerrarImagenModal()">Cerrar imagen</button>
+    </div>
+  </div>
+
+  <!-- BARRA DE NAVEGACIÓN INFERIOR EXCLUSIVA PARA TELÉFONOS Y TABLETS -->
+  <nav class="mobile-bottom-nav">
+    <button class="m-nav-item active" data-target="inicio" onclick="cambiarApartado('inicio')">
+      <span>Inicio</span>
+    </button>
+    <button class="m-nav-item" data-target="tricologia" onclick="cambiarApartado('tricologia')">
+      <span>Tricología</span>
+    </button>
+    <button class="m-nav-item" data-target="catalogo" onclick="cambiarApartado('catalogo')">
+      <span>Precios</span>
+    </button>
+    <button class="m-nav-item" data-target="galeria" onclick="cambiarApartado('galeria')">
+      <span>Galería</span>
+    </button>
+    <button class="m-nav-item m-nav-cta" data-target="contacto" onclick="cambiarApartado('contacto')">
+      <span>Turnos</span>
+    </button>
+  </nav>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <h3>DUKE'S BEAUTY STUDIO</h3>
+        <p>By Lina Duque — Atlanta, Georgia (USA) • WhatsApp: +1 (470) 796-0870</p>
+      </div>
+      <div class="footer-nav-btns">
+        <button onclick="cambiarApartado('inicio')">Inicio</button>
+        <button onclick="cambiarApartado('tricologia')">Tricología</button>
+        <button onclick="cambiarApartado('catalogo')">Catálogo y Precios</button>
+        <button onclick="cambiarApartado('pilares')">Cabello y Piel</button>
+        <button onclick="cambiarApartado('galeria')">Galería (10)</button>
+        <button onclick="cambiarApartado('contacto')">Ubicación y Turnos</button>
+        <a href="https://www.instagram.com/dukesbeautystudio" target="_blank" rel="noopener noreferrer" class="footer-ig-link">Instagram @dukesbeautystudio ↗</a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; <span id="currentYear"></span> Duke's Beauty Studio — Atlanta, GA. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DE TRADUCCIÓN AUTOMÁTICA A CUALQUIER IDIOMA (GOOGLE TRANSLATE) -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'es',
+          includedLanguages: 'en,es,pt,fr,it,de,zh-CN,ko,ru',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="script.js"></script>
+</body>
+</html>
