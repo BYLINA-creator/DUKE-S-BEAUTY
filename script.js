@@ -93,10 +93,10 @@ const serviciosDukes = [
   },
   {
     id: 14,
-    nombre: "Venta de Productos (Cabello y Piel)",
+    nombre: "Venta de Productos (Línea Capilar Duke's Herbal)",
     categoria: "piel-productos",
     precio: "$20 en adelante",
-    descripcion: "Productos profesionales de cuidado básico y especializado para mantener la salud de tu cabello y tu piel en casa."
+    descripcion: "Shampoo Herbal de Romero y Cebolla, Shampoo de Aguacate y Romero, y Tónico Herbal de Crecimiento para cuidado en casa."
   }
 ];
 
@@ -194,7 +194,7 @@ function mostrarServicios(filtroCategoria = "todos", textoBusqueda = "") {
 }
 
 function cargarOpcionesFormulario() {
-  serviceSelect.innerHTML = `<option value="">-- Selecciona un servicio --</option>`;
+  serviceSelect.innerHTML = `<option value="">-- Selecciona un servicio o producto --</option>`;
   serviciosDukes.forEach((s) => {
     const option = document.createElement("option");
     option.value = `${s.nombre} (${s.precio})`;
@@ -206,6 +206,16 @@ function cargarOpcionesFormulario() {
 window.seleccionarServicio = function (nombreServicio) {
   cambiarApartado("contacto");
   serviceSelect.value = nombreServicio;
+};
+
+// 5. PEDIR UN PRODUCTO DIRECTAMENTE POR WHATSAPP
+window.pedirProductoWhatsApp = function (nombreProducto) {
+  const mensaje =
+    `Hola Duke's Beauty Studio, espero que estes muy bien.%0A%0A` +
+    `Me interesa encargar el siguiente producto de la linea *Duke's Herbal* en Atlanta, GA:%0A` +
+    `• Producto: *${nombreProducto}*%0A%0A` +
+    `Quedo atenta al precio y disponibilidad. Muchas gracias.`;
+  window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, "_blank");
 };
 
 let categoriaActual = "todos";
@@ -226,7 +236,7 @@ document.getElementById("menuToggle").addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
-// 5. VISOR MODAL PARA LAS 10 FOTOS DE LA GALERÍA
+// 6. VISOR MODAL DE IMÁGENES
 window.abrirImagenModal = function (src, caption) {
   document.getElementById("modalImg").src = src;
   document.getElementById("modalCaption").textContent = caption;
@@ -237,7 +247,7 @@ window.cerrarImagenModal = function () {
   document.getElementById("imageModal").classList.remove("open");
 };
 
-// 6. ENVÍO DIRECTO A WHATSAPP (+1 470 796 0870) PREGUNTANDO DISPONIBILIDAD
+// 7. ENVÍO DIRECTO A WHATSAPP (+1 470 796 0870) PREGUNTANDO DISPONIBILIDAD
 document.getElementById("bookingForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -259,7 +269,7 @@ document.getElementById("bookingForm").addEventListener("submit", (e) => {
   window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, "_blank");
 });
 
-// 7. PARTÍCULAS DORADAS EN EL FONDO
+// 8. PARTÍCULAS DORADAS EN EL FONDO
 const canvas = document.getElementById("goldParticles");
 const ctx = canvas.getContext("2d");
 let particles = [];

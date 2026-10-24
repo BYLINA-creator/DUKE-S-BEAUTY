@@ -30,7 +30,7 @@
   <!-- PARTÍCULAS DORADAS FLOTANTES -->
   <canvas id="goldParticles"></canvas>
 
-  <!-- BARRA SUPERIOR CON UBICACIÓN, INSTAGRAM Y TRADUCTOR -->
+  <!-- BARRA SUPERIOR CON UBICACIÓN, WHATSAPP, INSTAGRAM Y TRADUCTOR -->
   <div class="topbar">
     <div class="container topbar-flex">
       <div class="topbar-info">
@@ -41,7 +41,6 @@
         <a href="https://www.instagram.com/dukesbeautystudio" target="_blank" rel="noopener noreferrer">@dukesbeautystudio ↗</a>
       </div>
 
-      <!-- Selector de Traducción a cualquier idioma -->
       <div class="translate-wrapper">
         <span class="translate-label">Idioma / Language:</span>
         <div id="google_translate_element"></div>
@@ -65,9 +64,10 @@
       <nav class="nav-links" id="navLinks">
         <button class="nav-tab active" data-target="inicio">Inicio</button>
         <button class="nav-tab" data-target="tricologia">Tricología</button>
-        <button class="nav-tab" data-target="catalogo">Catálogo y Precios</button>
+        <button class="nav-tab" data-target="catalogo">Servicios y Precios</button>
+        <button class="nav-tab" data-target="productos">Productos</button>
         <button class="nav-tab" data-target="pilares">Cabello y Piel</button>
-        <button class="nav-tab" data-target="galeria">Galería (10)</button>
+        <button class="nav-tab" data-target="galeria">Galería</button>
         <button class="nav-tab btn-nav-cta" data-target="contacto">Ubicación y Turnos</button>
       </nav>
     </div>
@@ -77,6 +77,8 @@
   <div class="luxury-marquee">
     <div class="marquee-track">
       <span>DIAGNÓSTICO CON CAPILÓGRAFO SIN COSTO ADICIONAL</span>
+      <span>•</span>
+      <span>LÍNEA CAPILAR NATURAL DUKE'S HERBAL</span>
       <span>•</span>
       <span>TRICOLOGÍA CAPILAR EN ATLANTA, GA</span>
       <span>•</span>
@@ -89,8 +91,6 @@
       <span>ATENCIÓN PERSONALIZADA POR TURNO INDIVIDUAL</span>
       <span>•</span>
       <span>DIAGNÓSTICO CON CAPILÓGRAFO SIN COSTO ADICIONAL</span>
-      <span>•</span>
-      <span>TRICOLOGÍA CAPILAR EN ATLANTA, GA</span>
     </div>
   </div>
 
@@ -104,25 +104,25 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <span class="shimmer-badge">ATLANTA, GEORGIA • CUIDADO PROFESIONAL Y TRICOLOGÍA</span>
-          <h1 class="reveal-item">Expertos en el cuidado integral de tu <em>cabello y tu piel</em></h1>
-          <p class="hero-lead reveal-item delay-1">
+          <h1>Expertos en el cuidado integral de tu <em>cabello y tu piel</em></h1>
+          <p class="hero-lead">
             Porque tu belleza merece un cuidado profesional, personalizado y con resultados reales. 
-            En <strong>Duke's Beauty Studio by Lina Duque</strong> trabajamos por cita exclusiva para dedicarte el tiempo y la excelencia que mereces.
+            En <strong>Duke's Beauty Studio by Lina Duque</strong> unimos tricología avanzada, servicios de alta estética y nuestra propia línea de productos capilares naturales.
           </p>
 
-          <div class="hero-buttons reveal-item delay-2">
+          <div class="hero-buttons">
             <button class="btn btn-gold-shimmer" onclick="cambiarApartado('catalogo')">
-              Explorar Catálogo y Precios
+              Ver Servicios y Precios
             </button>
-            <button class="btn btn-outline-gold" onclick="cambiarApartado('contacto')">
+            <button class="btn btn-outline-gold" onclick="cambiarApartado('productos')">
+              Ver Línea de Productos
+            </button>
+            <button class="btn btn-ig" onclick="cambiarApartado('contacto')">
               Consultar Turno Disponible
             </button>
-            <a href="https://www.instagram.com/dukesbeautystudio" target="_blank" rel="noopener noreferrer" class="btn btn-ig">
-              Instagram @dukesbeautystudio ↗
-            </a>
           </div>
 
-          <div class="quick-nav-cards reveal-item delay-3">
+          <div class="quick-nav-cards">
             <div class="quick-card glow-card" onclick="cambiarApartado('tricologia')">
               <span class="q-num">I</span>
               <div>
@@ -130,18 +130,18 @@
                 <small>Diagnóstico sin costo adicional</small>
               </div>
             </div>
-            <div class="quick-card glow-card" onclick="cambiarApartado('galeria')">
+            <div class="quick-card glow-card" onclick="cambiarApartado('productos')">
               <span class="q-num">II</span>
               <div>
-                <strong>Galería de Resultados</strong>
-                <small>Ver portafolio de fotos</small>
+                <strong>Productos Duke's Herbal</strong>
+                <small>Shampoos y Tónico de Crecimiento</small>
               </div>
             </div>
-            <div class="quick-card glow-card" onclick="cambiarApartado('contacto')">
+            <div class="quick-card glow-card" onclick="cambiarApartado('galeria')">
               <span class="q-num">III</span>
               <div>
-                <strong>Atlanta, GA (USA)</strong>
-                <small>Ver mapa y consultar cita</small>
+                <strong>Galería de Resultados</strong>
+                <small>Portafolio de 10 fotos</small>
               </div>
             </div>
           </div>
@@ -198,8 +198,8 @@
             <button class="btn btn-gold-shimmer" onclick="seleccionarServicio('Diagnóstico Capilar Avanzado (Sin costo adicional)')">
               Preguntar por Turno de Diagnóstico
             </button>
-            <button class="btn btn-outline-light" onclick="cambiarApartado('catalogo')">
-              Ver Catálogo Completo
+            <button class="btn btn-outline-light" onclick="cambiarApartado('productos')">
+              Conocer Productos de Crecimiento
             </button>
           </div>
         </div>
@@ -236,7 +236,177 @@
     </section>
 
     <!-- ==========================================
-         APARTADO 4: CUIDADO DE PIEL Y CABELLO
+         APARTADO 4: LÍNEA DE PRODUCTOS DUKE'S HERBAL (NUEVO)
+    =========================================== -->
+    <section id="view-productos" class="view-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">CUIDADO CAPILAR NATURAL Y EFECTIVO</span>
+          <h2>Línea Oficial de Productos Duke's Herbal</h2>
+          <p>Fórmulas botánicas concentradas para lograr un cabello más fuerte, largo, brillante y saludable desde la raíz.</p>
+        </div>
+
+        <!-- Presentación Principal: Imagen de Productos + Estadísticas de Eficacia -->
+        <div class="products-hero-grid">
+          <div class="products-poster-card glow-card" onclick="abrirImagenModal('productos.jpg', 'Línea Capilar Natural y Efectiva — Duke\'s Beauty Studio')">
+            <img src="productos.jpg" alt="Productos Duke's Herbal" class="products-main-img" onerror="this.src='lina.jpg'" />
+            <div class="poster-hint">Toca la imagen para ampliarla en pantalla completa</div>
+          </div>
+
+          <div class="products-stats-panel">
+            <span class="pilar-tag">EFICACIA COMPROBADA</span>
+            <h3>Resultados Visibles en tu Cabello</h3>
+            <p class="stats-intro">
+              Nuestra línea <strong>Duke's Herbal</strong> combina extractos botánicos puros que actúan directamente sobre el folículo piloso y la fibra capilar:
+            </p>
+
+            <!-- Barras de porcentaje de la imagen -->
+            <div class="stat-bars">
+              <div class="stat-item">
+                <div class="stat-head">
+                  <strong>92%</strong>
+                  <span>Estimula los folículos pilosos inactivos</span>
+                </div>
+                <div class="stat-track"><div class="stat-fill" style="width: 92%;"></div></div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-head">
+                  <strong>85%</strong>
+                  <span>Promueve el crecimiento acelerado del cabello</span>
+                </div>
+                <div class="stat-track"><div class="stat-fill" style="width: 85%;"></div></div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-head">
+                  <strong>77%</strong>
+                  <span>Reduce notablemente la caída del cabello</span>
+                </div>
+                <div class="stat-track"><div class="stat-fill" style="width: 77%;"></div></div>
+              </div>
+            </div>
+
+            <!-- Beneficios adicionales -->
+            <div class="mini-benefits-grid">
+              <div class="mini-benefit">
+                <strong>Hidrata y Repara</strong>
+                <small>Cabello más suave y manejable</small>
+              </div>
+              <div class="mini-benefit">
+                <strong>Brillo Natural</strong>
+                <small>Cabello luminoso y con vida</small>
+              </div>
+              <div class="mini-benefit">
+                <strong>Controla el Frizz</strong>
+                <small>Disciplinado y sin puntas abiertas</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjetas de los Productos para Pedir por WhatsApp -->
+        <div class="section-header" style="margin-top: 55px;">
+          <span class="section-subtitle">CATÁLOGO DE PRODUCTOS DESDE $20 EN ADELANTE</span>
+          <h2>Elige tu Fórmula Ideal</h2>
+          <p>Haz clic en el producto que deseas para encargarlo directamente por WhatsApp.</p>
+        </div>
+
+        <div class="product-cards-grid">
+          <div class="product-card glow-card">
+            <div>
+              <span class="prod-badge">PRESENTACIÓN 500 ML</span>
+              <h3>Shampoo Herbal Romero y Cebolla</h3>
+              <p class="prod-sub">Rosemary & Onion Formula</p>
+              <p>Ideal para fortalecer desde la raíz, detener la caída excesiva, estimular los folículos inactivos y devolver el brillo natural sin resecar.</p>
+            </div>
+            <button class="btn btn-gold-shimmer btn-full" onclick="pedirProductoWhatsApp('Shampoo Herbal Romero y Cebolla (500 ml)')">
+              Pedir por WhatsApp
+            </button>
+          </div>
+
+          <div class="product-card glow-card">
+            <div>
+              <span class="prod-badge">PRESENTACIÓN 500 ML</span>
+              <h3>Shampoo Herbal Aguacate y Romero</h3>
+              <p class="prod-sub">Aguacate y Aceite de Romero</p>
+              <p>Fórmula de nutrición e hidratación profunda que repara la fibra dañada, controla el frizz, elimina puntas abiertas y estimula el crecimiento.</p>
+            </div>
+            <button class="btn btn-gold-shimmer btn-full" onclick="pedirProductoWhatsApp('Shampoo Herbal Aguacate y Aceite de Romero (500 ml)')">
+              Pedir por WhatsApp
+            </button>
+          </div>
+
+          <div class="product-card glow-card">
+            <div>
+              <span class="prod-badge">TRATAMIENTO SIN ENJUAGUE</span>
+              <h3>Tónico Herbal de Crecimiento</h3>
+              <p class="prod-sub">Concentrado Botánico Intensivo</p>
+              <p>Activa la circulación del cuero cabelludo, despierta los folículos pilosos, fortalece el anclaje de la raíz y acelera el crecimiento capilar.</p>
+            </div>
+            <button class="btn btn-gold-shimmer btn-full" onclick="pedirProductoWhatsApp('Tónico Herbal de Crecimiento Duke\'s')">
+              Pedir por WhatsApp
+            </button>
+          </div>
+
+          <div class="product-card glow-card featured-kit">
+            <div>
+              <span class="prod-badge">TRATAMIENTO COMPLETO</span>
+              <h3>Kit Completo Duke's Herbal</h3>
+              <p class="prod-sub">Shampoo 500 ml + Tónico de Crecimiento</p>
+              <p>La combinación perfecta para máxima efectividad: limpieza nutritiva con el Shampoo de tu elección más activación intensiva con el Tónico Herbal.</p>
+            </div>
+            <button class="btn btn-gold-shimmer btn-full" onclick="pedirProductoWhatsApp('Kit Completo Duke\'s Herbal (Shampoo + Tónico de Crecimiento)')">
+              Consultar Precio del Kit por WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- Los 4 Ingredientes Naturales y Modo de Uso -->
+        <div class="ingredients-usage-grid">
+          <div class="ingredients-box">
+            <span class="pilar-tag">FÓRMULA BOTÁNICA</span>
+            <h3>Ingredientes Naturales Activos</h3>
+            <div class="ing-list">
+              <div class="ing-item">
+                <strong>Aguacate:</strong> Hidrata profundamente, nutre y repara la fibra del cabello.
+              </div>
+              <div class="ing-item">
+                <strong>Romero:</strong> Estimula los folículos pilosos y promueve el crecimiento constante.
+              </div>
+              <div class="ing-item">
+                <strong>Cebolla Roja:</strong> Fortalece la hebra, aporta brillo espejo y reduce la caída.
+              </div>
+              <div class="ing-item">
+                <strong>Extractos de Cortezas:</strong> Nutren, protegen y fortalecen el cabello desde la raíz.
+              </div>
+            </div>
+          </div>
+
+          <div class="usage-box">
+            <span class="pilar-tag" style="color: var(--gold-bright);">RUTINA EN CASA</span>
+            <h3>¿Cómo Usarlos Correctamente?</h3>
+            <div class="steps-list">
+              <div class="step-row">
+                <span class="step-circle">1</span>
+                <p><strong>Lava tu cabello con el Shampoo Duke's:</strong> Elige la fórmula según tu necesidad (Romero y Cebolla o Aguacate y Romero).</p>
+              </div>
+              <div class="step-row">
+                <span class="step-circle">2</span>
+                <p><strong>Activa el cuero cabelludo:</strong> Masajea suavemente durante 3 a 5 minutos y enjuaga con abundante agua tibia.</p>
+              </div>
+              <div class="step-row">
+                <span class="step-circle">3</span>
+                <p><strong>Aplica el Tónico Herbal:</strong> Aplícalo directamente en el cuero cabelludo de 3 a 4 veces por semana. Masajea por 5 minutos y no enjuagues.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         APARTADO 5: CUIDADO DE PIEL Y CABELLO
     =========================================== -->
     <section id="view-pilares" class="view-section">
       <div class="container">
@@ -326,7 +496,7 @@
     </section>
 
     <!-- ==========================================
-         APARTADO 5: GALERÍA PARA 10 FOTOS
+         APARTADO 6: GALERÍA PARA 10 FOTOS
     =========================================== -->
     <section id="view-galeria" class="view-section">
       <div class="container">
@@ -336,72 +506,71 @@
           <p>Toca cualquier imagen para verla en pantalla completa.</p>
         </div>
 
-        <!-- Espacio preparado para las 10 fotos (foto1.jpg a foto10.jpg) -->
         <div class="gallery-grid" id="galleryGrid">
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto1.jpg', 'Duke\'s Beauty Studio — Foto 01')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto1.jpg', 'Duke\'s Beauty Studio — Resultado 01')">
             <div class="img-zoom-wrap">
               <img src="foto1.jpg" alt="Galería 1" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 01</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto2.jpg', 'Duke\'s Beauty Studio — Foto 02')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto2.jpg', 'Duke\'s Beauty Studio — Resultado 02')">
             <div class="img-zoom-wrap">
               <img src="foto2.jpg" alt="Galería 2" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 02</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto3.jpg', 'Duke\'s Beauty Studio — Foto 03')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto3.jpg', 'Duke\'s Beauty Studio — Resultado 03')">
             <div class="img-zoom-wrap">
               <img src="foto3.jpg" alt="Galería 3" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 03</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto4.jpg', 'Duke\'s Beauty Studio — Foto 04')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto4.jpg', 'Duke\'s Beauty Studio — Resultado 04')">
             <div class="img-zoom-wrap">
               <img src="foto4.jpg" alt="Galería 4" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 04</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto5.jpg', 'Duke\'s Beauty Studio — Foto 05')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto5.jpg', 'Duke\'s Beauty Studio — Resultado 05')">
             <div class="img-zoom-wrap">
               <img src="foto5.jpg" alt="Galería 5" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 05</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto6.jpg', 'Duke\'s Beauty Studio — Foto 06')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto6.jpg', 'Duke\'s Beauty Studio — Resultado 06')">
             <div class="img-zoom-wrap">
               <img src="foto6.jpg" alt="Galería 6" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 06</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto7.jpg', 'Duke\'s Beauty Studio — Foto 07')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto7.jpg', 'Duke\'s Beauty Studio — Resultado 07')">
             <div class="img-zoom-wrap">
               <img src="foto7.jpg" alt="Galería 7" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 07</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto8.jpg', 'Duke\'s Beauty Studio — Foto 08')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto8.jpg', 'Duke\'s Beauty Studio — Resultado 08')">
             <div class="img-zoom-wrap">
               <img src="foto8.jpg" alt="Galería 8" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 08</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto9.jpg', 'Duke\'s Beauty Studio — Foto 09')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto9.jpg', 'Duke\'s Beauty Studio — Resultado 09')">
             <div class="img-zoom-wrap">
               <img src="foto9.jpg" alt="Galería 9" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
             <div class="gallery-caption">Resultado Real 09</div>
           </div>
 
-          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto10.jpg', 'Duke\'s Beauty Studio — Foto 10')">
+          <div class="gallery-item glow-card" onclick="abrirImagenModal('foto10.jpg', 'Duke\'s Beauty Studio — Resultado 10')">
             <div class="img-zoom-wrap">
               <img src="foto10.jpg" alt="Galería 10" onerror="this.closest('.gallery-item').style.display='none'" />
             </div>
@@ -422,7 +591,7 @@
     </section>
 
     <!-- ==========================================
-         APARTADO 6: UBICACIÓN EN ATLANTA Y CONSULTA DE TURNO
+         APARTADO 7: UBICACIÓN EN ATLANTA Y CONSULTA DE TURNO
     =========================================== -->
     <section id="view-contacto" class="view-section">
       <div class="container contacto-grid">
@@ -478,7 +647,7 @@
             </div>
 
             <div class="form-group">
-              <label for="serviceSelect">Servicio que te interesa</label>
+              <label for="serviceSelect">Servicio o Producto que te interesa</label>
               <select id="serviceSelect" required></select>
             </div>
 
@@ -502,7 +671,7 @@
 
   </main>
 
-  <!-- VISOR MODAL PARA AMPLIAR LAS 10 FOTOS DE LA GALERÍA -->
+  <!-- VISOR MODAL PARA AMPLIAR FOTOS -->
   <div id="imageModal" class="modal-overlay" onclick="cerrarImagenModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <img id="modalImg" src="" alt="Vista ampliada" />
@@ -511,16 +680,16 @@
     </div>
   </div>
 
-  <!-- BARRA DE NAVEGACIÓN INFERIOR EXCLUSIVA PARA TELÉFONOS Y TABLETS -->
+  <!-- BARRA DE NAVEGACIÓN INFERIOR PARA TELÉFONOS Y TABLETS -->
   <nav class="mobile-bottom-nav">
     <button class="m-nav-item active" data-target="inicio" onclick="cambiarApartado('inicio')">
       <span>Inicio</span>
     </button>
-    <button class="m-nav-item" data-target="tricologia" onclick="cambiarApartado('tricologia')">
-      <span>Tricología</span>
-    </button>
     <button class="m-nav-item" data-target="catalogo" onclick="cambiarApartado('catalogo')">
-      <span>Precios</span>
+      <span>Servicios</span>
+    </button>
+    <button class="m-nav-item" data-target="productos" onclick="cambiarApartado('productos')">
+      <span>Productos</span>
     </button>
     <button class="m-nav-item" data-target="galeria" onclick="cambiarApartado('galeria')">
       <span>Galería</span>
@@ -540,7 +709,8 @@
       <div class="footer-nav-btns">
         <button onclick="cambiarApartado('inicio')">Inicio</button>
         <button onclick="cambiarApartado('tricologia')">Tricología</button>
-        <button onclick="cambiarApartado('catalogo')">Catálogo y Precios</button>
+        <button onclick="cambiarApartado('catalogo')">Servicios y Precios</button>
+        <button onclick="cambiarApartado('productos')">Productos Capilares</button>
         <button onclick="cambiarApartado('pilares')">Cabello y Piel</button>
         <button onclick="cambiarApartado('galeria')">Galería (10)</button>
         <button onclick="cambiarApartado('contacto')">Ubicación y Turnos</button>
@@ -552,7 +722,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT DE TRADUCCIÓN AUTOMÁTICA A CUALQUIER IDIOMA (GOOGLE TRANSLATE) -->
+  <!-- TRADUCTOR AUTOMÁTICO DE GOOGLE -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
